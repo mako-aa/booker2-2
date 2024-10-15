@@ -1,0 +1,17 @@
+<!-- sidebar -->
+<div class = "sidebar">
+  <%= render 'shared/user', user: @user %>
+  <%= render 'shared/new', book: @book %>
+</div>
+
+
+<% @books.each do |book| %>
+  <div>
+    
+    <p><%= image_tag book.user.get_profile_image(100,100)  %></p>
+
+    <p><%= link_to book.title, book_path(book) %></p>
+    <p><%= book.opinion %></p>
+
+  </div>
+<% end %>
